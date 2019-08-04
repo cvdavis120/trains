@@ -35,6 +35,17 @@ $("document").ready(function () {
 
     })
 
+    function makeTable(iname, idest, iftt, ifreq) {
+        let name = iname
+        let dest = idest
+        let ftt = iftt
+        let freq = ifreq
+        let nextArrive = ""
+        let minAway = ""
+
+        //
+    }
+
 
 
 
