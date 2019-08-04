@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/styles.css">
+    <title> Look a Train</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- //HEADER -->
+        <div class="row">
+            <h1 class="header">
+                ANYTIME IS TRAIN TIME
+            </h1>
+            <h2 class="subheader">
+                CHOO CHOO. CHOO CHOO
+            </h2>
+        </div>
+        <!-- // Train Schedule  -->
+        <div class="row">
+            <table class="table table-striped">
+                Current Train Schedule
+                <thead>
+                    <tr>
+                        <th scope="col">Train Name</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Frequency (Min.)</th>
+                        <th scope="col">Next Arrival</th>
+                        <th scope="col">Minutes Away</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>Jacob</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                        <td>Jacob</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                        <td>Jacob</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- New Train Form -->
+        <div class="row">
+
+            <form role="form">
+                ADD A TRAIN
+                <div class="form-group">
+                    <label for="name-input">Train Name:</label>
+                    <input class="form-control" id="name-input" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="dest-input">Destination:</label>
+                    <input class="form-control" id="dest-input" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="time-input">First Train Time:</label>
+                    <input class="form-control" id="time-input" type="number">
+                </div>
+                <div class="form-group">
+                    <label for="freq-input">Frequency:</label>
+                    <input class="form-control" id="freq-input"></input>
+                </div>
+                <button class="button" id="add-train" type="submit">Submit Train</button>
+            </form>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
+    <script src="assets/app.js"></script>
+</body>
+
+</html>
