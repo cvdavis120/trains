@@ -16,6 +16,7 @@ $("document").ready(function () {
     var freq = ""
     var ftt = ""
     // Submit a new train
+
     $("#add-train").on('click', () => {
 
 
@@ -23,8 +24,9 @@ $("document").ready(function () {
 
         name = $("#name-input").val()
         dest = $("#dest-input").val()
-        ftt = $("#ftt-input").val()
+        ftt = $("#time-input").val()
         freq = $("#freq-input").val()
+
         database.ref().push({
             TrainName: name,
             TrainDest: dest,
@@ -32,21 +34,61 @@ $("document").ready(function () {
             TrainFreq: freq,
             dateAdded: firebase.database.ServerValue.TIMESTAMP
         });
-
+        $("tbody").empty()
+        makeTable(name, dest, ftt, freq)
     })
+    database.ref().on("value", function (snapshot) {
+        var myArr = Object.values(snapshot.toJSON())
+        $("tbody").empty()
+        myArr.forEach((x) => {
+
+            let trainName = x.TrainName
+            let trainDest = x.TrainDest
+            let trainFreq = x.TrainFreq
+            let trainFTT = x.Trainftt
+
+            makeTable(trainName, trainDest, trainFreq, trainFTT)
+        })
+    });
+
 
     function makeTable(iname, idest, iftt, ifreq) {
+
         let name = iname
         let dest = idest
         let ftt = iftt
         let freq = ifreq
         let nextArrive = ""
         let minAway = ""
+        nextArrive = nextArr(ftt)
+        minAway = minAwayCalc(ftt)
+        let newtr = $("<tr></tr>")
+        let newth = $("<th></th>")
+        newth.attr("scope", "row")
+        newth.text(name)
+        newtr.prepend(newth)
+        let tdA = $("<td></td>")
+        let tdB = $("<td></td>")
+        let tdC = $("<td></td>")
+        let tdD = $("<td></td>")
+        tdA.text(dest)
+        tdB.text(freq)
+        tdC.text(nextArrive)
+        tdD.text(minAway)
+        newtr.append(tdA)
+        newtr.append(tdB)
+        newtr.append(tdC)
+        newtr.append(tdD)
+        $("tbody").prepend(newtr)
 
-        //
     }
 
+    function nextArr() {
+        return ("hold")
+    }
 
-
+    function minAwayCalc() {
+        return ("hold")
+    }
 
 })
